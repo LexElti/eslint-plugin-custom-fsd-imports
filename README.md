@@ -1,6 +1,6 @@
 # eslint-plugin-custom-fsd-imports
 
-plugin for production project
+Plugin for FSD projects
 
 ## Installation
 
@@ -38,9 +38,3 @@ Then configure the rules you want to use under the rules section.
     }
 }
 ```
-
-## Supported Rules
-
-* Fill in provided rules here
-
-

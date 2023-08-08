@@ -1,20 +1,13 @@
-/**
- * @fileoverview public API imports rule
- * @author LexDev
- */
 "use strict";
-
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
 
 const rule = require("../../../lib/rules/public-api-imports"),
   RuleTester = require("eslint").RuleTester;
 
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
+const aliasOptions = [
+  {
+    alias: '@'
+  }
+];
 
 const ruleTester = new RuleTester({
   parserOptions: {
@@ -22,12 +15,6 @@ const ruleTester = new RuleTester({
     sourceType: 'module'
   }
 });
-
-const aliasOptions = [
-  {
-    alias: '@'
-  }
-]
 
 ruleTester.run("public-api-imports", rule, {
   valid: [
@@ -78,7 +65,7 @@ ruleTester.run("public-api-imports", rule, {
     {
       filename: 'C:\\Users\\user\\Desktop\\javascript\\production_project\\src\\entities\\forbidden.ts',
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing'",
-      errors: [{message: 'Test data needs to be imported from publicApi/testing.ts'}],
+      errors: [{message: 'Test data needs to be imported from Public API (testing.ts)'}],
       options: [{
         alias: '@',
         testFilesPatterns: ['**/*.test.ts', '**/StoreDecorator.tsx']

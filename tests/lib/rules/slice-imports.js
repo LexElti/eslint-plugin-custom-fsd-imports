@@ -1,20 +1,7 @@
-/**
- * @fileoverview feature sliced relative path checker
- * @author LexDev
- */
 "use strict";
 
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
-const rule = require("../../../lib/rules/path-checker"),
+const rule = require("../../../lib/rules/slice-imports"),
   RuleTester = require("eslint").RuleTester;
-
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester({
   parserOptions: {
@@ -22,7 +9,8 @@ const ruleTester = new RuleTester({
     sourceType: 'module'
   }
 });
-ruleTester.run("path-checker", rule, {
+
+ruleTester.run("slice-imports", rule, {
   valid: [
     {
       filename: 'C:\\Users\\user\\Desktop\\javascript\\production_project\\src\\entities\\Article',
