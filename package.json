@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-custom-fsd-imports",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Plugin for FSD projects",
   "keywords": [
     "eslint",
