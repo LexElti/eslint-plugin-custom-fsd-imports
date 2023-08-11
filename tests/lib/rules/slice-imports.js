@@ -20,19 +20,21 @@ ruleTester.run("slice-imports", rule, {
   ],
   invalid: [
     {
-      filename: 'C:\\Users\\user\\Desktop\\javascript\\production_project\\src\\entities\\Article',
+      filename: 'C:\\Users\\user\\Desktop\\javascript\\production_project\\src\\entities\\Article\\ui\\Article.tsx',
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/model/slices/addCommentFormSlice'",
       errors: [{ message: "Paths within a slice must be relative"}],
       options: [
         {
           alias: '@'
         }
-      ]
+      ],
+      output: "import { addCommentFormActions, addCommentFormReducer } from '../model/slices/addCommentFormSlice'",
     },
     {
-      filename: 'C:\\Users\\user\\Desktop\\javascript\\production_project\\src\\entities\\Article',
+      filename: 'C:\\Users\\user\\Desktop\\javascript\\production_project\\src\\entities\\Article\\ui\\Article.tsx',
       code: "import { addCommentFormActions, addCommentFormReducer } from 'entities/Article/model/slices/addCommentFormSlice'",
       errors: [{ message: "Paths within a slice must be relative"}],
+      output: "import { addCommentFormActions, addCommentFormReducer } from '../model/slices/addCommentFormSlice'",
     },
   ],
 });
